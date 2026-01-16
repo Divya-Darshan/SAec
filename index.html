@@ -7,284 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <style>
-        * {
-            font-family: 'Poppins', sans-serif;
-        }
-        
-        .sidebar-gradient {
-            background: linear-gradient(180deg, #1e293b 0%, #334155 50%, #475569 100%);
-        }
-        
-        .main-gradient {
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%);
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 25%, #7c3aed 50%, #a855f7 75%, #ec4899 100%);
-        }
-        
-        .card-shadow {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-        
-        .nav-item {
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .nav-item:hover {
-            background: rgba(59, 130, 246, 0.1);
-            border-left: 4px solid #3b82f6;
-            padding-left: 20px;
-        }
-        
-        .nav-item.active {
-            background: rgba(59, 130, 246, 0.2);
-            border-left: 4px solid #3b82f6;
-            padding-left: 20px;
-        }
-        
-        .section-card {
-            background: white;
-            border-radius: 20px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s ease;
-        }
-        
-        .section-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-        }
-        
-        .gradient-text {
-            background: linear-gradient(135deg, #3b82f6, #7c3aed, #ec4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .countdown-box {
-            background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
-            border: 2px solid #e2e8f0;
-            border-radius: 15px;
-            padding: 1.5rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .countdown-box:hover {
-            transform: scale(1.05);
-            border-color: #3b82f6;
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
-        }
-        
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .feature-icon:hover {
-            transform: rotate(5deg) scale(1.1);
-        }
-        
-        .track-card {
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            border: 1px solid #e2e8f0;
-            border-radius: 20px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-        
-        .track-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: #3b82f6;
-        }
-        
-        .timeline-item {
-            position: relative;
-            padding-left: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #3b82f6;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            left: 5px;
-            top: 12px;
-            width: 2px;
-            height: calc(100% + 1rem);
-            background: #e2e8f0;
-        }
-        
-        .timeline-item:last-child::after {
-            display: none;
-        }
-        
-        .accordion-header {
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .accordion-header:hover {
-            background: #f1f5f9;
-        }
-        
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease;
-        }
-        
-        .accordion-content.active {
-            max-height: 2000px;
-        }
-        
-        .mobile-menu {
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .mobile-menu.active {
-            transform: translateX(0);
-        }
-        
-        @media (max-width: 768px) {
-            .main-content {
-                margin-left: 0 !important;
-            }
-            
-            .countdown-box {
-                padding: 1rem;
-            }
-            
-            .section-card {
-                padding: 1rem;
-                margin-bottom: 1rem;
-            }
-            
-            .track-card {
-                padding: 1rem;
-            }
-            
-            .timeline-item {
-                padding-left: 1.5rem;
-            }
-        }
-        
-        .loading-overlay {
-            background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-        }
-        
-        .spinner {
-            border: 4px solid #e2e8f0;
-            border-top: 4px solid #3b82f6;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
-        }
-        
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .btn-primary {
-            background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.3);
-        }
-        
-        .btn-secondary {
-            background: white;
-            color: #3b82f6;
-            border: 2px solid #3b82f6;
-            padding: 12px 24px;
-            border-radius: 10px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .btn-secondary:hover {
-            background: #3b82f6;
-            color: white;
-            transform: translateY(-2px);
-        }
-        
-        .stats-card {
-            background: linear-gradient(135deg, #3b82f6 0%, #7c3aed 100%);
-            color: white;
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-        
-        .stats-card:hover {
-            transform: scale(1.05);
-        }
-        
-        /* Mobile responsive adjustments */
-        @media (max-width: 640px) {
-            .countdown-box {
-                padding: 0.75rem;
-            }
-            
-            .feature-icon {
-                width: 50px;
-                height: 50px;
-            }
-            
-            .btn-primary, .btn-secondary {
-                padding: 10px 20px;
-                font-size: 0.875rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50">
     <!-- Loading Screen -->
@@ -373,19 +96,19 @@
                     <div class="grid grid-cols-4 gap-2 md:gap-4 max-w-sm md:max-w-md mx-auto px-2" id="countdown">
                         <div class="countdown-box">
                             <div class="text-xl md:text-3xl font-bold text-blue-600" id="days">000</div>
-                            <div class="text-xs md:text-sm text-gray-300">Days</div>
+                            <div class="text-xs md:text-sm text-gray-900">Days</div>
                         </div>
                         <div class="countdown-box">
                             <div class="text-xl md:text-3xl font-bold text-purple-600" id="hours">00</div>
-                            <div class="text-xs md:text-sm text-gray-300">Hours</div>
+                            <div class="text-xs md:text-sm text-gray-900">Hours</div>
                         </div>
                         <div class="countdown-box">
                             <div class="text-xl md:text-3xl font-bold text-pink-600" id="minutes">00</div>
-                            <div class="text-xs md:text-sm text-gray-300">Minutes</div>
+                            <div class="text-xs md:text-sm text-gray-900">Minutes</div>
                         </div>
                         <div class="countdown-box">
                             <div class="text-xl md:text-3xl font-bold text-green-600" id="seconds">00</div>
-                            <div class="text-xs md:text-sm text-gray-300">Seconds</div>
+                            <div class="text-xs md:text-sm text-gray-900">Seconds</div>
                         </div>
                     </div>
                 </div>
@@ -484,9 +207,8 @@
                         <div class="w-full lg:flex-1">
                             <h3 class="text-2xl md:text-3xl font-bold text-blue-600 mb-4 text-center lg:text-left">About the Conference</h3>
                             <p class="text-gray-700 leading-relaxed mb-4 md:mb-6 text-justify text-sm md:text-base">
-                                The International Conference on Artificial Intelligence, Machine Learning and Cyber Security (ICAMC 2026) aims to bring together leading researchers, academics, industry experts, and practitioners to explore the convergence of AI-driven innovations and modern cybersecurity challenges. As digital threats grow in complexity, the integration of artificial intelligence into security frameworks becomes crucial for building resilient systems.
-                                ICAMC 2026 provides a global platform for exchanging ideas, discussing groundbreaking research, and showcasing practical applications of AI in enhancing cyber defense, threat prediction, security analytics, and privacy preservation.
-                            </p>
+ The International Conference on Emerging Artificial Intelligence, Machine Learning, Deep Learning, and Cyber Security aims to bring together researchers, academicians, industry professionals, and practitioners from across the globe to discuss recent advancements, emerging trends, and future directions in intelligent computing and secure digital systems.
+The conference serves as a premier interdisciplinary platform to exchange innovative ideas, present cutting-edge research, and explore AI-driven solutions for complex cyber and data-driven challenges in the digital era.                    </p>
 
                             <div class="mb-4 md:mb-6">
                                 <h4 class="text-lg md:text-xl font-semibold text-purple-600 mb-3">Key Highlights:</h4>
@@ -549,11 +271,12 @@
                     <div id="objectives-content" class="accordion-content active">
                         <div class="p-4 md:p-6">
                             <ol class="list-decimal list-inside space-y-2 md:space-y-3 text-gray-700 text-sm md:text-base">
-                                <li>To explore cutting-edge AI models for cyber threat detection and response.</li>
-                                <li>To understand the role of machine learning and deep learning in securing digital ecosystems.</li>
-                                <li>To promote collaborative research between academia, industry, and government in cybersecurity and AI.</li>
-                                <li>To provide a forum for presenting innovations in secure AI architecture, ethical AI, and trust-aware systems.</li>
-                                <li>To encourage interdisciplinary dialogue on AI governance, regulation, and responsible use in cybersecurity.</li>
+                                <li>To provide a global platform for showcasing emerging AI, ML, and Deep Learning techniques.</li>
+                                <li>To promote research and innovation in AI-driven cyber security solutions.</li>
+                                <li>To encourage collaboration between academia, industry, and research organizations.</li>
+                                <li>To explore future-ready intelligent and secure systems for real-world applications.</li>
+                                <li>To discuss ethical, trustworthy, and resilient AI models for secure digital ecosystems.</li>
+
                             </ol>
                         </div>
                     </div>
@@ -570,11 +293,12 @@
                     <div id="outcomes-content" class="accordion-content">
                         <div class="p-4 md:p-6">
                             <ol class="list-decimal list-inside space-y-2 md:space-y-3 text-gray-700 text-sm md:text-base">
-                                <li>Knowledge sharing on the latest trends in AI-powered cybersecurity.</li>
-                                <li>Establishment of academic and industry collaborations for future R&D.</li>
-                                <li>Proceedings publication of peer-reviewed papers in reputed journals/conference series.</li>
-                                <li>Insightful keynotes and panel discussions from global cybersecurity, ML and AI leaders.</li>
-                                <li>Networking and mentorship opportunities for researchers and startups.</li>
+                                <li>Dissemination of high-quality research findings in AI, ML, DL, and Cyber Security.</li>
+                                <li>Identification of emerging research challenges and future directions.</li>
+                                <li>Development of industry-academia collaborations and research networks.</li>
+                                <li>Publication of peer-reviewed papers in reputed proceedings/journals.</li>
+                                <li>Enhanced knowledge sharing on secure, intelligent, and sustainable technologies.</li>
+
                             </ol>
                         </div>
                     </div>
@@ -736,119 +460,121 @@
 
 
     <!-- Important Dates Section -->
-    <section class="py-16 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Header -->
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
-                    Important <span class="gradient-text">Dates</span>
-                </h2>
-                <div class="w-24 h-1 bg-yellow-400 mx-auto mb-8"></div>
-                <p class="text-xl text-gray-300">
-                    Mark your calendar with these crucial deadlines
-                </p>
-            </div>
+<section id="#dates" class="py-16 bg-gradient-to-br from-gray-900 to-blue-900 text-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6">
+                Important <span class="gradient-text">Dates</span>
+            </h2>
+            <div class="w-24 h-1 bg-yellow-400 mx-auto mb-8"></div>
+            <p class="text-xl text-gray-300">
+                Mark your calendar with these crucial deadlines
+            </p>
+        </div>
 
-            <!-- Timeline -->
-            <div class="relative pl-8">
-                <!-- Vertical Line -->
-                <div class="absolute left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 to-purple-400"></div>
-                
-                <div class="space-y-12">
-                    <!-- Date 1 -->
-                    <div class="timeline-item relative">
-                        <div class="absolute -left-6 w-4 h-4 bg-blue-400 rounded-full border-4 border-gray-900"></div>
-                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 ml-4">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                                <div class="flex items-center mb-4 md:mb-0">
-                                    <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mr-4">
-                                        <i class="fas fa-paper-plane text-white"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-xl font-bold">Paper Submission Deadline</h3>
-                                        <p class="text-gray-300">Last date for Submission of Full-Length Paper of not more than 8 pages</p>
-                                    </div>
+        <!-- Timeline -->
+        <div class="relative pl-8">
+            <!-- Vertical Line -->
+            <div class="absolute left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-400 to-purple-400"></div>
+            
+            <div class="space-y-12">
+                <!-- Date 1 -->
+                <div class="timeline-item relative">
+                    <div class="absolute -left-6 w-4 h-4 bg-blue-400 rounded-full border-4 border-gray-900"></div>
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-paper-plane text-white"></i>
                                 </div>
-                                <div class="text-2xl font-bold text-blue-400">15.06.2026</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Date 2 -->
-                    <div class="timeline-item relative">
-                        <div class="absolute -left-6 w-4 h-4 bg-purple-400 rounded-full border-4 border-gray-900"></div>
-                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 ml-4">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                                <div class="flex items-center mb-4 md:mb-0">
-                                    <div class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mr-4">
-                                        <i class="fas fa-bell text-white"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-xl font-bold">Acceptance Notification</h3>
-                                        <p class="text-gray-300">Last Date for Notification of Paper Acceptance</p>
-                                    </div>
+                                <div>
+                                    <h3 class="text-xl font-bold">Paper Submission Deadline</h3>
+                                    <p class="text-gray-300">Last date for Submission of Full-Length Paper of not more than 8 pages</p>
                                 </div>
-                                <div class="text-2xl font-bold text-purple-400">15.07.2026</div>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Date 3 -->
-                    <div class="timeline-item relative">
-                        <div class="absolute -left-6 w-4 h-4 bg-green-400 rounded-full border-4 border-gray-900"></div>
-                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 ml-4">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                                <div class="flex items-center mb-4 md:mb-0">
-                                    <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mr-4">
-                                        <i class="fas fa-dollar-sign text-white"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-xl font-bold">Early Bird Registration</h3>
-                                        <p class="text-gray-300">Last Date for Submission of Camera Ready Paper with Early Bird Registration Fee</p>
-                                    </div>
-                                </div>
-                                <div class="text-2xl font-bold text-green-400">15.08.2026</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Date 4 -->
-                    <div class="timeline-item relative">
-                        <div class="absolute -left-6 w-4 h-4 bg-yellow-400 rounded-full border-4 border-gray-900"></div>
-                        <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 ml-4">
-                            <div class="flex flex-col md:flex-row md:items-center md:justify-between">
-                                <div class="flex items-center mb-4 md:mb-0">
-                                    <div class="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center mr-4">
-                                        <i class="fas fa-user-check text-white"></i>
-                                    </div>
-                                    <div>
-                                        <h3 class="text-xl font-bold">Standard Registration</h3>
-                                        <p class="text-gray-300">Last Date for Submission of Camera Ready Paper with Standard Registration Fee</p>
-                                    </div>
-                                </div>
-                                <div class="text-2xl font-bold text-yellow-400">15.09.2026</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Conference Date -->
-                    <div class="timeline-item relative">
-                        <div class="absolute -left-6 w-4 h-4 bg-red-400 rounded-full border-4 border-gray-900"></div>
-                        <div class="bg-gradient-to-r from-red-300 to-pink-900 rounded-2xl p-3 ml-4">
-                            <div class="text-center">
-                                <div class="flex items-center justify-center mb-4">
-                                    <i class="fas fa-calendar-check text-3xl mr-4"></i>
-                                    <h3 class="text-2xl font-bold">Conference Dates</h3>
-                                </div>
-                                <p class="text-lg mb-4">Main conference event</p>
-                                <div class="text-4xl font-bold text-pink-900">15 - 16, October 2026</div>
-                            </div>
+                            <div class="text-2xl font-bold text-blue-400">13.07.2026</div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Date 2 -->
+                <div class="timeline-item relative">
+                    <div class="absolute -left-6 w-4 h-4 bg-purple-400 rounded-full border-4 border-gray-900"></div>
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="w-12 h-12 bg-purple-500 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-bell text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold">Acceptance Notification</h3>
+                                    <p class="text-gray-300">Last Date for Notification of Paper Acceptance</p>
+                                </div>
+                            </div>
+                            <div class="text-2xl font-bold text-purple-400">13.08.2026</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Date 3 -->
+                <div class="timeline-item relative">
+                    <div class="absolute -left-6 w-4 h-4 bg-green-400 rounded-full border-4 border-gray-900"></div>
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="w-12 h-12 bg-green-500 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-dollar-sign text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold">Early Bird Registration</h3>
+                                    <p class="text-gray-300">Last Date for Submission of Camera Ready Paper with Early Bird Registration Fee</p>
+                                </div>
+                            </div>
+                            <div class="text-2xl font-bold text-green-400">13.09.2026</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Date 4 -->
+                <div class="timeline-item relative">
+                    <div class="absolute -left-6 w-4 h-4 bg-yellow-400 rounded-full border-4 border-gray-900"></div>
+                    <div class="bg-white bg-opacity-10 backdrop-blur-sm rounded-2xl p-6 ml-4">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                            <div class="flex items-center mb-4 md:mb-0">
+                                <div class="w-12 h-12 bg-yellow-500 rounded-xl flex items-center justify-center mr-4">
+                                    <i class="fas fa-user-check text-white"></i>
+                                </div>
+                                <div>
+                                    <h3 class="text-xl font-bold">Standard Registration</h3>
+                                    <p class="text-gray-300">Last Date for Submission of Camera Ready Paper with Standard Registration Fee</p>
+                                </div>
+                            </div>
+                            <div class="text-2xl font-bold text-yellow-400">13.10.2026</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Conference Date -->
+                <div class="timeline-item relative">
+                    <div class="absolute -left-6 w-4 h-4 bg-red-400 rounded-full border-4 border-gray-900"></div>
+                    <div class="bg-gradient-to-r from-red-300 to-pink-900 rounded-2xl p-3 ml-4">
+                        <div class="text-center">
+                            <div class="flex items-center justify-center mb-4">
+                                <i class="fas fa-calendar-check text-3xl mr-4"></i>
+                                <h3 class="text-2xl font-bold">Conference Dates</h3>
+                            </div>
+                            <p class="text-lg mb-4">Main conference event</p>
+                            <div class="text-4xl font-bold text-pink-900">12 - 13, November 2026</div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Registration Fees Section -->
     <section class="py-16 bg-gray-50">
@@ -1083,8 +809,8 @@
         </section>
 
         <!-- Acknowledgment Section -->
-        <section id="acknowledgment" class="py-12 md:py-20 bg-gray-100 fade-in">
-                        <span class="gradient-text">Microsoft CMT Login</span>
+        <section id="acknowledgment" class="py-12  md:py-20 bg-gray-100 fade-in">
+                        <span class="gradient-text text-xl ml-10">Microsoft CMT Login</span>
                     </h2>
                 </div>
                 
@@ -1140,7 +866,7 @@
                                 <i class="fas fa-globe text-green-600 text-lg md:text-xl mr-3 md:mr-4 mt-1"></i>
                                 <div>
                                     <h4 class="font-semibold text-gray-800 text-sm md:text-base">Website</h4>
-                                    <p class="text-gray-600 text-sm md:text-base">www.saec.ac.in/icamc2026</p>
+                                    <p class="text-gray-600 text-sm md:text-base">www.saec.ac.in/icamdc2026</p>
                                 </div>
                             </div>
                         </div>
@@ -1185,7 +911,7 @@
                         <h4 class="text-lg md:text-xl font-bold mb-4">Contact</h4>
                         <div class="space-y-2 text-gray-400 text-sm md:text-base">
                             <p><i class="fas fa-map-marker-alt mr-2"></i>S.A. Engineering College</p>
-                            <p><i class="fas fa-envelope mr-2"></i>icamc2026@saec.ac.in</p>
+                            <p><i class="fas fa-envelope mr-2"></i>icamdc2026@saec.ac.in  </p>
                         </div>
                     </div>
                     
