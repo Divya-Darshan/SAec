@@ -1216,7 +1216,7 @@
                 
                 <div class="border-t border-gray-700 pt-6 md:pt-8 text-center">
                     <p class="text-gray-400 text-sm md:text-base">
-                        © 2026 S.A. Engineering College. All rights reserved.
+                        © <span id="year" ></span> S.A. Engineering College. All rights reserved.
                     </p>
                 </div>
             </div>
@@ -1224,6 +1224,11 @@
     </main>
 
     <script>
+        let id_year = document.getElementById('year');
+        let current_year = new Date().getFullYear();
+
+        id_year.innerHTML = current_year;
+
         // Loading screen
         window.addEventListener('load', () => {
             setTimeout(() => {
