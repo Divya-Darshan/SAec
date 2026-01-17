@@ -14,7 +14,7 @@
     <div id="loading-screen" class="fixed inset-0 z-50 loading-overlay flex items-center justify-center">
         <div class="text-center text-white">
             <div class="spinner mx-auto mb-4"></div>
-            <h2 class="text-xl md:text-2xl font-bold">Loading ICAMC 2026...</h2>
+            <h2 class="text-xl md:text-2xl font-bold">ICAMDC 2026...</h2>
         </div>
     </div>
 
@@ -51,34 +51,49 @@
     <!-- Main Content -->
     <main class="main-content md:ml-64 min-h-screen">
         <!-- Hero Section -->
-        <section id="home" class="relative text-white bg-cover bg-center bg-no-repeat min-h-screen flex flex-col" style="background-image: url('image/saec.jpeg');">
+        <section id="home"  class="relative text-white bg-cover bg-center bg-no-repeat min-h-screen flex flex-col transition-background duration-700">
+
             
-           <div class=" mb-6 md:mb-10">
-                <div class="flex flex-col lg:flex-row gap-6 md:gap-8 items-center">
-                    <div class="flex-shrink-0 w-full lg:w-auto">
-                        <img src="image/logo.png" alt="SAEC Logo" class="w-full max-w-xs lg:w-48 lg:h-48 object-cover  mx-auto">
-                    </div>
-                    <div class="w-full lg:flex-1">
-                        <h3 class="text-3xl md:text-6xl font-semibold text-black mb-4 text-center "> S.A. ENGINEERING COLLEGE</h3>
-                       
-                             <p class="text-black text-center font-bold leading-relaxed mb-4 md:mb-6 text-xl md:text-base">
-                            (An Autonomous Institution Affiliated to Anna University Chennai)<br>
-                             Accredited by NAAC 'A' Grade & ISO 9001:2015 Certified Institution </p>
+           <center>
+               <div class=" mb-6 md:mb-10">
+                    <div class="flex flex-col lg:flex-row gap-6 md:gap-8 items-center">
+                        <div class="flex-shrink-0 w-full lg:w-auto">
+                            <img src="image/logo.png" alt="SAEC Logo" class="w-full max-w-xs lg:w-48 lg:h-48 object-cover  mx-auto">
+                        </div>
+                        <div class="w-full lg:flex-1">
+                            <h3 class="text-3xl md:text-6xl font-semibold text-black mb-4 text-center "> S.A. ENGINEERING COLLEGE</h3>
+               
+                                 <p class="text-black text-center font-bold leading-relaxed mb-4 md:mb-6 text-xl md:text-base">
+                                (An Autonomous Institution Affiliated to Anna University Chennai)<br>
+                                 Accredited by NAAC 'A' Grade & ISO 9001:2015 Certified Institution </p>
+                        </div>
                     </div>
                 </div>
-            </div>
+           </center>
 
             <!-- Overlay for better text visibility -->
             <div class="absolute inset-0 bg-black bg-opacity-50"></div>
             
             <div class="relative container mx-auto px-4 md:px-6 z-10 text-center max-w-6xl flex-1 flex flex-col justify-center">
                 
-                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mt-4 md:mt-6">
-                    2026
-                </h1>
-                <h2 class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-6 md:mb-8 px-2">
-                   International Conference on Emerging Artificial Intelligence, Machine Learning, Deep Learning, and Cyber Security (ICAMDC 2026)
-                </h2>
+<h1
+  class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mt-4 md:mt-6
+         tracking-wide
+         bg-clip-text text-transparent
+         bg-gradient-to-r from-white via-gray-100 to-white
+         drop-shadow-[0_4px_20px_rgba(0,0,0,0.6)]">
+  2026
+</h1>
+
+<h2
+  class="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-6 md:mb-8 px-2
+         text-white
+         leading-snug
+         drop-shadow-[0_3px_15px_rgba(0,0,0,0.55)]">
+  International Conference on Emerging Artificial Intelligence, Machine Learning,
+  Deep Learning, and Cyber Security (ICAMDC 2026)
+</h2>
+
                 
                 <div class="mb-8 md:mb-12">
                     <p class="text-lg md:text-xl mb-4">
@@ -92,27 +107,100 @@
                 </div>
 
                 <!-- Countdown Timer -->
-                <div class="mb-8 md:mb-12">
-                    <h3 class="text-xl md:text-2xl font-semibold mb-4 md:mb-6">Conference Countdown</h3>
-                    <div class="grid grid-cols-4 gap-2 md:gap-4 max-w-sm md:max-w-md mx-auto px-2" id="countdown">
-                        <div class="countdown-box">
-                            <div class="text-xl md:text-3xl font-bold text-blue-600" id="days">000</div>
-                            <div class="text-xs md:text-sm text-gray-900">Days</div>
-                        </div>
-                        <div class="countdown-box">
-                            <div class="text-xl md:text-3xl font-bold text-purple-600" id="hours">00</div>
-                            <div class="text-xs md:text-sm text-gray-900">Hours</div>
-                        </div>
-                        <div class="countdown-box">
-                            <div class="text-xl md:text-3xl font-bold text-pink-600" id="minutes">00</div>
-                            <div class="text-xs md:text-sm text-gray-900">Minutes</div>
-                        </div>
-                        <div class="countdown-box">
-                            <div class="text-xl md:text-3xl font-bold text-green-600" id="seconds">00</div>
-                            <div class="text-xs md:text-sm text-gray-900">Seconds</div>
-                        </div>
-                    </div>
-                </div>
+<!-- Countdown Timer (Glass Effect) -->
+<div class="mb-10 md:mb-14">
+    <h3 class="text-xl md:text-2xl font-semibold mb-5 md:mb-6">
+        Conference Countdown
+    </h3>
+
+    <div
+        id="countdown"
+        class="grid grid-cols-2 sm:grid-cols-4 gap-3 md:gap-5
+               max-w-sm md:max-w-lg mx-auto p-4 md:p-5
+               bg-white/20 backdrop-blur-xl
+               border border-white/30
+               rounded-2xl
+               shadow-xl
+               ring-1 ring-white/30
+               shadow-[0_0_40px_rgba(255,255,255,0.25)]"
+    >
+
+        <!-- Days -->
+        <div
+            class="flex flex-col items-center justify-center rounded-xl p-4
+                   bg-white/30 backdrop-blur-md
+                   border border-white/40
+                   transition-transform duration-300
+                   hover:scale-105
+                   shadow-[0_0_25px_rgba(255,255,255,0.25)]
+                   hover:shadow-[0_0_35px_rgba(255,255,255,0.35)]"
+        >
+            <div class="text-2xl md:text-4xl font-extrabold text-blue-600" id="days">
+                000
+            </div>
+            <div class="mt-1 text-xs md:text-sm font-semibold text-gray-900 tracking-wide uppercase">
+                Days
+            </div>
+        </div>
+
+        <!-- Hours -->
+        <div
+            class="flex flex-col items-center justify-center rounded-xl p-4
+                   bg-white/30 backdrop-blur-md
+                   border border-white/40
+                   transition-transform duration-300
+                   hover:scale-105
+                   shadow-[0_0_25px_rgba(255,255,255,0.25)]
+                   hover:shadow-[0_0_35px_rgba(255,255,255,0.35)]"
+        >
+            <div class="text-2xl md:text-4xl font-extrabold text-purple-600" id="hours">
+                00
+            </div>
+            <div class="mt-1 text-xs md:text-sm font-semibold text-gray-900 tracking-wide uppercase">
+                Hours
+            </div>
+        </div>
+
+        <!-- Minutes -->
+        <div
+            class="flex flex-col items-center justify-center rounded-xl p-4
+                   bg-white/30 backdrop-blur-md
+                   border border-white/40
+                   transition-transform duration-300
+                   hover:scale-105
+                   shadow-[0_0_25px_rgba(255,255,255,0.25)]
+                   hover:shadow-[0_0_35px_rgba(255,255,255,0.35)]"
+        >
+            <div class="text-2xl md:text-4xl font-extrabold text-pink-600" id="minutes">
+                00
+            </div>
+            <div class="mt-1 text-xs md:text-sm font-semibold text-gray-900 tracking-wide uppercase">
+                Minutes
+            </div>
+        </div>
+
+        <!-- Seconds -->
+        <div
+            class="flex flex-col items-center justify-center rounded-xl p-4
+                   bg-white/30 backdrop-blur-md
+                   border border-white/40
+                   transition-transform duration-300
+                   hover:scale-105
+                   shadow-[0_0_25px_rgba(255,255,255,0.25)]
+                   hover:shadow-[0_0_35px_rgba(255,255,255,0.35)]"
+        >
+            <div class="text-2xl md:text-4xl font-extrabold text-green-600" id="seconds">
+                00
+            </div>
+            <div class="mt-1 text-xs md:text-sm font-semibold text-gray-900 tracking-wide uppercase">
+                Seconds
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
                 
                 <!-- Buttons -->
                 <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-4 px-4">
@@ -884,7 +972,7 @@ The conference serves as a premier interdisciplinary platform to exchange innova
                 </div>
 
                 <!-- Advisory Committee -->
-                <div class="section-card mb-6 md:mb-8">
+                <div class="section-card glass-card mb-6 md:mb-8">
                     <div class="accordion-header p-4 md:p-6 border-b" onclick="toggleAccordion('advisory-content')">
                         <div class="flex items-center justify-between">
                             <h3 class="text-xl md:text-2xl font-bold text-gray-800">Advisory Committee</h3>
@@ -910,7 +998,7 @@ The conference serves as a premier interdisciplinary platform to exchange innova
                 </div>
 
                 <!-- Technical Programme Committee -->
-                <div class="section-card">
+                <div class="section-card glass-card">
                     <div class="p-4 md:p-6">
                         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                             <h3 class="text-xl md:text-2xl font-bold text-gray-800">Technical Programme Committee</h3>
@@ -928,7 +1016,7 @@ The conference serves as a premier interdisciplinary platform to exchange innova
                 </div>
                 
                 <div class="max-w-4xl mx-auto">
-                    <div class="section-card">
+                    <div class="section-card glass-card">
                         <p>
                             The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
                         </p>
@@ -951,7 +1039,7 @@ The conference serves as a premier interdisciplinary platform to exchange innova
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                     <!-- Contact Info -->
-                    <div class="section-card">
+                    <div class="section-card glass-card">
                         <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6">Contact Information</h3>
 
                         <div class="space-y-3 md:space-y-4">
@@ -986,7 +1074,7 @@ The conference serves as a premier interdisciplinary platform to exchange innova
                     </div>
 
                     <!-- Coordinators -->
-                    <div class="section-card">
+                    <div class="section-card glass-card">
                         <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4 md:mb-6">Coordinators</h3>
 
                         <div class="space-y-3 md:space-y-4">
@@ -1067,6 +1155,27 @@ The conference serves as a premier interdisciplinary platform to exchange innova
         let current_year = new Date().getFullYear();
 
         id_year.innerHTML = current_year;
+
+          const homeSection = document.getElementById("home");
+
+  const bgImages = [
+    "./image/saec.jpg",
+    "https://www.saec.ac.in/wp-content/uploads/2021/12/about-us-slider-3.jpg",
+    "https://scontent.fmaa2-3.fna.fbcdn.net/v/t39.30808-6/300185839_196729902699753_1734219907666249734_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=SGAxYy6LFQoQ7kNvwH88WrP&_nc_oc=AdkhTrvnHEfbE2ChstA7yYNHKNTx0gv_3l40VnaHzQ1FiV87XUX5bUHhgz3utFGk6mxHVNZw7dz-mymRmPyqf_AB&_nc_zt=23&_nc_ht=scontent.fmaa2-3.fna&_nc_gid=Ziwjvd0Gh-iEDhfZgT9odw&oh=00_AfqQE5HM8kUCd2YrYj-IwimgJaq8c-U4iStM64RSW3xTpg&oe=6970ED6E"
+  ];
+
+  let currentIndex = 0;
+
+  function changeBackground() {
+    homeSection.style.backgroundImage = `url('${bgImages[currentIndex]}')`;
+    currentIndex = (currentIndex + 1) % bgImages.length;
+  }
+
+  // Initial load
+  changeBackground();
+
+  // Change every 6 seconds
+  setInterval(changeBackground, 6000);
 
         // Loading screen
         window.addEventListener('load', () => {
